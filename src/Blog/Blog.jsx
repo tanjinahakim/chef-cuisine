@@ -25,10 +25,7 @@ const Blog = () => {
                 <h4>Express is a lightweight and adaptable node. js online application framework that offers a complete set of functionality for creating single- and multi-page, as well as hybrid, web apps. The description of Node. js, on the other hand, describes it as "A platform built on Chrome's JavaScript runtime for easily creating fast, scalable network applications."
             </h4>
             </div>
-            <div className='mb-5'>
-                <h2>What is a custom hook, and why will you create a custom hook?</h2>
-                <h4>Reusability is provided by custom React JS hooks because once a custom hook is built, it can be used repeatedly, making the code cleaner and taking less time to write. Additionally, it speeds up code rendering because a custom hook doesn't have to be rendered repeatedly while the entire code is being rendered.</h4>
-            </div>
+           
 
         </div>
     );
