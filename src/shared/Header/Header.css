@@ -1,0 +1,10 @@
+.banner{
+    background-image: url("../../assets/bg2.jpg");
+    height: 100vh;
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.button:hover{
+    background-color: white;
+}
