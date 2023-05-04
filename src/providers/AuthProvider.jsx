@@ -26,7 +26,7 @@ const [user,setUser]=useState(null);
         setLoader(true);
         return signInWithPopup(auth,googleProvider);
     }
-    const 
+    
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, loggedUser=>{
             console.log('login successfully');
