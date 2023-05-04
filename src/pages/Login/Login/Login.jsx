@@ -75,9 +75,9 @@ const Login = () => {
                     Don't Have an Account? <Link to={'/register'}>Register</Link>
                     </Form.Text>
                 </Form.Group>
-                <div className='container m-5'>
-                <Button onClick={googleLoginHandler} variant="outline-primary"><FaGoogle></FaGoogle> Continue with Google</Button>
-                <Button onClick={handleGithubSign} className='mx-2 px-3' variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
+                <div className='container my-5 responsive d-grid gap-2 col-12  mx-auto'>
+                <Button onClick={googleLoginHandler} variant="outline-primary " size='sm' className='fw-semibold'><FaGoogle></FaGoogle> Continue with Google</Button>
+                <Button onClick={handleGithubSign} className=' px-5 fw-semibold ' variant="outline-dark" size='sm'><FaGithub></FaGithub> Login with Github</Button>
                 </div>
 
             </Form>
