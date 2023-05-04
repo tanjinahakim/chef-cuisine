@@ -21,9 +21,9 @@ const Chefs = () => {
         
         {
            
-                chefs.map(chef=>
-                    <Col lg={4}>
-                        <ChefCard key={chef.id}
+                chefs.map((chef)=>
+                    <Col lg={4} key={chef.id}>
+                        <ChefCard
                         
                 chef={chef}>
 

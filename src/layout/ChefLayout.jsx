@@ -32,13 +32,13 @@ const ChefLayout = () => {
                     
                 </div>
                 </div>
-                <Image  src={img} roundedCircle style={{width:"auto",height:"50vh"}} className='my-5'></Image>
+                <Image  src={img} rounded style={{width:"auto",height:"50vh"}} className='my-5'></Image>
             </div>
             <Container className='my-5 recipes'>
                         <Row>
                                 {
                                     recipe.map(r=>(
-                                        <Col lg={4} key={r.food_id}>
+                                        <Col lg={6} key={r.food_id} className='my-5'>
                                         <Card >
                                         <Card.Img variant="top" src={r.food_url} style={{objectFit: "cover",height:"15vw"}} />
                                         <Card.Header as="h5">{r.name}</Card.Header>

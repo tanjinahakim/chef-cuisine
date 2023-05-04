@@ -22,7 +22,7 @@ const ChefCard = ({chef}) => {
                         <p className='flex-grow' > <FaThumbsUp></FaThumbsUp> {likes}</p>
                         </div>
                     </div>
-                     <Link to={`/chefRecipies/${id}`}><Button variant="outline-primary" size="sm" className='z-0 position-absolute fw-semibold '><FaHotjar></FaHotjar> View Recipes</Button></Link>
+                     <Link to={`/chefRecipies/${id}`}><Button variant="outline-primary" size="sm" className='z-0 position-absolute fw-semibold'><FaHotjar></FaHotjar> View Recipes</Button></Link>
                 </div>
                 
 

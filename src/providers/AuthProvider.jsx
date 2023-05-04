@@ -7,15 +7,18 @@ const auth = getAuth(app);
 const AuthProvider = ({children}) => {
 const [loader,setLoader]=useState(true);
 const [user,setUser]=useState(null);
-    
+const [loading,setLoading]=useState(true);
     
     const createUser =(email,password)=>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
     }
     const signIn = (email,password)=>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,password)
     }
     const logOut = ()=>{
+        setLoading(true);
         return signOut(auth);
     }
     const updated =(user,name, photo) =>{
@@ -36,6 +39,7 @@ const [user,setUser]=useState(null);
             console.log('login successfully');
             setUser(loggedUser);
             setLoader(false);
+            setLoading(false);
         })
         return ()=>{
             unsubscribe();
@@ -48,7 +52,8 @@ const [user,setUser]=useState(null);
         logOut,
         updated,
         handleGoogleLogin,
-        handleGitHubLogin
+        handleGitHubLogin,
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>
