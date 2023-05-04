@@ -26,7 +26,11 @@ const [user,setUser]=useState(null);
         setLoader(true);
         return signInWithPopup(auth,googleProvider);
     }
-    
+    const githubProvider = new GithubAuthProvider();
+    const handleGitHubLogin = () =>{
+        setLoader(true);
+        return signInWithPopup(auth,googleProvider);
+    }
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, loggedUser=>{
             console.log('login successfully');
