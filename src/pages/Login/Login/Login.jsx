@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const {signIn}=useContext(AuthContext);
+    const {signIn,handleGoogleLogin}=useContext(AuthContext);
+    const [loading,setLoading]=useState(false)
     const navigate = useNavigate();
     const location = useLocation();
     const from =location.state?.from?.pathname || '/home';
@@ -24,6 +26,19 @@ const Login = () => {
             event.target.reset();
         })
         .catch(error => console.log(error))
+    }
+    const  googleLoginHandler = () =>{
+        setLoading(true);
+        handleGoogleLogin()
+        .then(result=>{
+            setLoading(false)
+            navigate('/home')
+
+        })
+        .catch(err=>{
+            setLoading(false)
+        })
+
     }
     return (
         <Container>
@@ -48,6 +63,11 @@ const Login = () => {
                     Don't Have an Account? <Link to={'/register'}>Register</Link>
                     </Form.Text>
                 </Form.Group>
+                <div className='container m-5'>
+                <Button onClick={googleLoginHandler} variant="outline-primary"><FaGoogle></FaGoogle> Continue with Google</Button>
+                <Button className='mx-2 px-3' variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
+                </div>
+
             </Form>
         </Container>
     );
