@@ -2,13 +2,12 @@ import React, { useContext} from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import './Header.css';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 import { Avatar, Tooltip } from '@mui/material';
 import ActiveLink from '../../ActiveLink/ActiveLink';
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContext);
-
     const handleLogOut = ()=>{
         logOut()
         .then()
