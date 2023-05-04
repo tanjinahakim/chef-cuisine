@@ -7,6 +7,7 @@ import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../Blog/Blog";
 import ErrorPage from "../pages/errorPage/errorPage";
+import Terms from "../shared/Terms/Terms";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         {
           path:'/blog',
           element:<Blog></Blog>
+        },
+        {
+          path:'/terms',
+          element:<Terms></Terms>
         }
       ]
     },

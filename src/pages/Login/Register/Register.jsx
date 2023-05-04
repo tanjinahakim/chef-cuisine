@@ -7,6 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Register = () => {
     const {createUser,updated}= useContext(AuthContext);
     const [error, setError] = useState('');
+    const[accepted,setAccepted]=useState(false)
 
     const handleRegister = event =>{
         event.preventDefault();
@@ -35,6 +36,9 @@ const Register = () => {
         .catch(error =>console.log(error))
     }
 
+     const handleAccepted = event =>{
+        setAccepted(event.target.checked);
+     }
     return (
        <Container>
         <h2 className='text-center'>Please Register</h2>
@@ -58,9 +62,9 @@ const Register = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Accept Terms and Conditions" />
+                    <Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link to={'/terms'}>Terms and Conditions</Link></>} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button disabled={!accepted} variant="primary" type="submit">
                     Register
                 </Button>
                 <Form.Text>
