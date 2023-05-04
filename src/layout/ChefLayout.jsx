@@ -6,14 +6,13 @@ import {  FaHamburger, FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
 import { BsBook } from "react-icons/bs";
 import "./ChefLayout.css"
 import Rating from 'react-rating';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ChefLayout = () => {
     const chefs = useLoaderData();
     const {img,name,bio,experience,likes,recipes,recipe}=chefs;
-    // const [disable,setDisable]=useState(false);
     const handleDisable=(event)=>{
-        toast("Added  to Favourite!");
+        
         event.currentTarget.disabled = true;
         
     }
@@ -21,18 +20,23 @@ const ChefLayout = () => {
     return (
         <div>
             <Header></Header>
-            <div className='d-flex justify-content-center align-items-center ' style={{background:"#dfe4ea",backgroundSize:"cover"}}>
-                <div className='flex-grow m-5'>
+            <div className='p-5 banner' >
+                <Row>
+                    <Col lg={8}>
+                    <div className=' p-5 m-5 bio'>
                     <h2>{name}</h2>
                     <p >{bio}</p>
                     <div className='d-flex align-items-center '>
                      <h6 className='fs-6 d-flex justify-content-center align-items-center '><FaStar style={{fontSize:"1em",marginRight:"4px"}}></FaStar>{experience} year of Experience </h6>
                      <h6 className='px-4 fs-6 d-flex justify-content-center align-items-center'><FaHamburger style={{fontSize:"1em",marginRight:"4px"}}></FaHamburger>{recipes} recipes</h6> 
                      <h6 className='px-4 fs-6 d-flex justify-content-center align-items-center'><FaThumbsUp style={{fontSize:"1em",marginRight:"4px"}}></FaThumbsUp>{likes} Likes</h6>                                         
-                    
+                    </div>
                 </div>
-                </div>
-                <Image  src={img} rounded style={{width:"auto",height:"50vh"}} className='my-5'></Image>
+                    </Col>
+                    <Col lg={4}>
+                    <Image  src={img} roundedCircle style={{width:"auto",height:"50vh"}} className='my-5 img'></Image>
+                    </Col>
+                </Row>
             </div>
             <Container className='my-5 recipes'>
                         <Row>
