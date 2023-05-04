@@ -6,7 +6,6 @@ import {  FaHamburger, FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
 import { BsBook } from "react-icons/bs";
 import "./ChefLayout.css"
 import Rating from 'react-rating';
-import { ToastContainer, toast } from 'react-toastify';
 
 const ChefLayout = () => {
     const chefs = useLoaderData();

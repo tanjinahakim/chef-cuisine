@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import Blog from "../Blog/Blog";
 import ErrorPage from "../pages/errorPage/errorPage";
 import Terms from "../shared/Terms/Terms";
+import About from "../About/About";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
           path:'/terms',
           element:<Terms></Terms>
+        },
+        {
+          path:'/about',
+          element:<About></About>
         }
       ]
     },
