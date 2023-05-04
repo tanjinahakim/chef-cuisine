@@ -6,7 +6,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const {signIn,handleGoogleLogin}=useContext(AuthContext);
+    const {signIn,handleGoogleLogin,handleGitHubLogin}=useContext(AuthContext);
     const [loading,setLoading]=useState(false)
     const navigate = useNavigate();
     const location = useLocation();
@@ -40,6 +40,18 @@ const Login = () => {
         })
 
     }
+    const handleGithubSign = () =>{
+        setLoading(true);
+        handleGitHubLogin()
+        .then(result=>{
+            setLoading(false)
+            navigate('/home')
+
+        })
+        .catch(err=>{
+            setLoading(false)
+        })
+    }
     return (
         <Container>
             <Form onSubmit={handleLogin} className=" shadow-lg p-5 rounded mx-auto my-5 w-50">
@@ -65,7 +77,7 @@ const Login = () => {
                 </Form.Group>
                 <div className='container m-5'>
                 <Button onClick={googleLoginHandler} variant="outline-primary"><FaGoogle></FaGoogle> Continue with Google</Button>
-                <Button className='mx-2 px-3' variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
+                <Button onClick={handleGithubSign} className='mx-2 px-3' variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
                 </div>
 
             </Form>
