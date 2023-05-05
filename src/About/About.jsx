@@ -1,8 +1,6 @@
 import React from 'react';
 import "./About.css";
-import pic1 from "../assets/about/pic1.jpg"
-import pic2 from "../assets/about/pic2.jpg"
-import pic3 from "../assets/about/pic3.jpg"
+import pic from "../assets/about/pic3.jpg"
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +10,7 @@ const About = () => {
             <Row className='container  text-center'>
             
             <Col lg={6} className='my-5'>
-                <Image src={pic3} roundedCircle className='shadow' style={{height:"50vh",width:"50vh"}}/>
+                <Image src={pic} roundedCircle className='shadow' style={{height:"50vh",width:"50vh"}}/>
             </Col>
             <Col lg={6} className='my-5'>
                 <h5>About Us</h5>
