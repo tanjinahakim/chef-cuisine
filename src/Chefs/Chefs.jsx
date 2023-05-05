@@ -16,7 +16,7 @@ const Chefs = () => {
     },[])
     return (
         <Container>
-       <h2 className=' my-4 text-center'>Meet Our Chefs</h2>
+       <h2 className=' my-4 text-center chef-title'>Meet Our Chefs</h2>
       <Row>
         
         {

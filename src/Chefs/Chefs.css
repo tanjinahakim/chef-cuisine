@@ -2,3 +2,8 @@
 .btn:hover{
     color: none;
 }
+.chef-title{
+    font-family: 'Comme', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}

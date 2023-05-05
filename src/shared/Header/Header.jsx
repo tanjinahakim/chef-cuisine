@@ -18,7 +18,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='py-3'>
                 <Container>
-                    <Navbar.Brand href="#home">Chef Recipes</Navbar.Brand>
+                    <Navbar.Brand href="#home">Chef Cuisine</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto nav  ">

@@ -18,7 +18,7 @@ import { useRef, useState } from 'react';
 	const ref = useRef();
 
 	return (
-		<div className="App">
+		<div>
 			<Pdf targetRef={ref} filename="document.pdf">
 				{({ toPdf }) => (
 					<button onClick={toPdf} className="button">

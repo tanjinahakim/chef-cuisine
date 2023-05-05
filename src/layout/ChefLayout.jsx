@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../shared/Header/Header';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData ,useNavigation} from 'react-router-dom';
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import {  FaHamburger, FaHeart, FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
 import { BsBook } from "react-icons/bs";
@@ -11,7 +11,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ChefLayout = () => {
+    const navigation = useNavigation();
     const chefs = useLoaderData();
+    {navigation.state === 'loading'?'loading':''
+                
+}
+    console.log(navigation);
     const {img,name,bio,experience,likes,recipes,recipe}=chefs;
     const handleDisable=(event)=>{
         toast.warn("Added To Favourite");
@@ -22,6 +27,7 @@ const ChefLayout = () => {
     
     return (
         <div>
+           
             <Header></Header>
             <div className='p-5 banner' >
                 <Row>
