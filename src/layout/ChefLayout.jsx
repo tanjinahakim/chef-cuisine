@@ -5,10 +5,11 @@ import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import {  FaHamburger, FaHeart, FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
 import { BsBook } from "react-icons/bs";
 import "./ChefLayout.css"
-import Rating from 'react-rating';
+import { Rating } from '@smastrom/react-rating'
 import Footer from '../shared/Footer/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '@smastrom/react-rating/style.css'
 
 const ChefLayout = () => {
     const navigation = useNavigation();
@@ -19,7 +20,7 @@ const ChefLayout = () => {
     console.log(navigation);
     const {img,name,bio,experience,likes,recipes,recipe}=chefs;
     const handleDisable=(event)=>{
-        toast.warn("Added To Favourite");
+        toast("Added To Favourite");
         
         event.currentTarget.disabled = true;
         
@@ -73,14 +74,9 @@ const ChefLayout = () => {
                                         
                                         <Card.Footer className="text-muted">
                                         <div className='d-flex'>
-                                        <div className='flex-grow-1'>
-                                        <Rating className=' justify-self-center '
-                                            placeholderRating={r.rating}
-                                            readonly
-                                            emptySymbol={<FaRegStar ></FaRegStar>}
-                                            placeholderSymbol={<FaStar className='text-warning  '></FaStar>}
-                                            fullSymbol={<FaStar></FaStar>}
-                                            />
+                                        <div className='flex-grow-1 d-flex'>
+                                        <Rating style={{ maxWidth: 100 }} value={r.rating} readOnly/>
+                                        
                                             <span className='ms-2 mt-4'>{r.rating}</span>
                                         </div>
                                             <div>
