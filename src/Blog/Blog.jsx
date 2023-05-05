@@ -1,12 +1,13 @@
-import ReactPDF from '@react-pdf/renderer';
-import React from 'react';
-
+import React, { useRef } from 'react';
 
 const Blog = () => {
+    
+
     return (
         <div>
-            <div className='container' ref={ref}>
-            <h2 className='mt-5'>Blog Page</h2>
+            
+            <div className='container' >
+            <h2 className='mt-5' style={{textAlign:"center"}}>Blog Page</h2>
             <div className='mb-5'>
                 <h2>Tell us the differences between uncontrolled and controlled components.</h2>
                 <h4>Controlled components in React are those whose state and behavior are managed by the parent component. To modify their state and behavior, these components rely on props that are given down from the parent component. Components that control their own state on an internal level are referred to as uncontrolled components.</h4>

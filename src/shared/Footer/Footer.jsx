@@ -33,9 +33,9 @@ const Footer = () => {
                 <h3 className='text-justify ps-4'>Subscribe</h3>
                 <p>Subscribe for our latest & Articles. We Won’t Give You Spam Mails</p>
                 <div className='d-flex'>
-                <div class="input-group rounded w-50">
+                <div className="input-group rounded w-50">
                     <input type="search" className="form-control rounded shadow-lg w-50 mb-1" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <button type="submit" class="btn btn-danger px-4 mx-4 rounded btn-sm">Search</button>
+                    <button type="submit" className="btn btn-danger px-4 mx-4 rounded btn-sm">Search</button>
                 </div>
             </div>
                 </div>

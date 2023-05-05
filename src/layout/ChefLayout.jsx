@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import Header from '../shared/Header/Header';
-import { useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
-import {  FaHamburger, FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
+import {  FaHamburger, FaHeart, FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
 import { BsBook } from "react-icons/bs";
 import "./ChefLayout.css"
 import Rating from 'react-rating';
+import Footer from '../shared/Footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefLayout = () => {
     const chefs = useLoaderData();
     const {img,name,bio,experience,likes,recipes,recipe}=chefs;
     const handleDisable=(event)=>{
+        toast("Added To Favourite");
         
         event.currentTarget.disabled = true;
         
@@ -75,6 +79,7 @@ const ChefLayout = () => {
                                         </div>
                                             <div>
                                                 <Button size='sm' onClick={handleDisable}>Favourite</Button>
+                                                <ToastContainer/>
                                             </div>
 
 
@@ -91,7 +96,9 @@ const ChefLayout = () => {
                             
                         </Row>
                                            
-                    </Container>         
+                    </Container>   
+                    <Outlet></Outlet>      
+                    <Footer></Footer>
 
         </div>
     );
