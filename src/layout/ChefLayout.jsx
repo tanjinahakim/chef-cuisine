@@ -14,7 +14,7 @@ const ChefLayout = () => {
     const chefs = useLoaderData();
     const {img,name,bio,experience,likes,recipes,recipe}=chefs;
     const handleDisable=(event)=>{
-        toast("Added To Favourite");
+        toast.warn("Added To Favourite");
         
         event.currentTarget.disabled = true;
         
